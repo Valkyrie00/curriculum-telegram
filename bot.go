@@ -1,7 +1,6 @@
 package main
 
 import (
-	"curriculum/logger"
 	"fmt"
 	"log"
 	"os"
@@ -30,11 +29,11 @@ func init() {
 	bot.Debug = true
 
 	if err != nil {
-		logger.Panic(err)
+		Panic(err)
 	}
 
 	logMessage := fmt.Sprintf("Bot connesso correttamente %s", bot.Self.UserName)
-	logger.Info(logMessage)
+	Info(logMessage)
 }
 
 func updatesHandler() {
@@ -43,7 +42,7 @@ func updatesHandler() {
 
 	updates, chanErr := bot.GetUpdatesChan(u)
 	if chanErr != nil {
-		logger.Panic(chanErr)
+		Panic(chanErr)
 	}
 
 	for update := range updates {
@@ -80,7 +79,7 @@ func commandsHandler(update tgbotapi.Update) {
 // SendMsg - Send telegram message
 func SendMsg(response tgbotapi.Chattable) {
 	if _, err := bot.Send(response); err != nil {
-		logger.Panic(err)
+		Panic(err)
 	}
 }
 

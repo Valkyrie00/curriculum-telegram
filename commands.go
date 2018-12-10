@@ -1,14 +1,13 @@
 package main
 
 import (
-	"curriculum/logger"
 	"time"
 
 	"github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
 func init() {
-	logger.Info("Init commands package - OK")
+	Info("Init commands package - OK")
 }
 
 // HomeReplyKeyboard home-keyboard
