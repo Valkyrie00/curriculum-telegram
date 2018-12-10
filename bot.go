@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"strings"
 
@@ -34,6 +35,17 @@ func init() {
 
 	logMessage := fmt.Sprintf("Bot connesso correttamente %s", bot.Self.UserName)
 	Info(logMessage)
+
+	Info("Start PingServer")
+
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "8001"
+		Info("$PORT must be set")
+	}
+
+	go http.ListenAndServe(":"+port, nil)
 }
 
 func updatesHandler() {
@@ -99,7 +111,7 @@ func breakCommand(message string) (string, []string, bool) {
 }
 
 func main() {
-	log.Println("Start :)")
+	Info("Start BOT and SERVER")
 
 	// Bot
 	updatesHandler()
