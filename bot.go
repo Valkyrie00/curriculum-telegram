@@ -16,7 +16,22 @@ var (
 	bot *tgbotapi.BotAPI
 )
 
-func init() {
+func pingServer() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "8011"
+		Info("$PORT must be set")
+	}
+
+	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello :)")
+	})
+
+	http.ListenAndServe(":"+port, nil)
+}
+
+func updatesHandler() {
 	var telegramApikey string
 
 	errDotEnv := godotenv.Load()
@@ -36,19 +51,6 @@ func init() {
 	logMessage := fmt.Sprintf("Bot connesso correttamente %s", bot.Self.UserName)
 	Info(logMessage)
 
-	Info("Start PingServer")
-
-	port := os.Getenv("PORT")
-
-	if port == "" {
-		port = "8001"
-		Info("$PORT must be set")
-	}
-
-	go http.ListenAndServe(":"+port, nil)
-}
-
-func updatesHandler() {
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
 
@@ -111,8 +113,11 @@ func breakCommand(message string) (string, []string, bool) {
 }
 
 func main() {
-	Info("Start BOT and SERVER")
+	// PingServer
+	Info("Start PingServer")
+	go pingServer()
 
 	// Bot
+	Info("Start Bot")
 	updatesHandler()
 }
