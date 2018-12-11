@@ -78,6 +78,8 @@ func commandsHandler(update tgbotapi.Update) {
 			StartCommand(update)
 		case "/Start":
 			StartCommand(update)
+		case "/start":
+			StartCommand(update)
 		case "Raccontami":
 			StoryCommand(update)
 		case "Percorso":
