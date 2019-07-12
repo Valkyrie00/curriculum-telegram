@@ -1,4 +1,4 @@
-FROM golang:1.12
+FROM balenalib/%%BALENA_MACHINE_NAME%%-golang:latest-build AS build
 
 RUN curl https://glide.sh/get | sh
 
@@ -13,3 +13,5 @@ COPY . $PKG_PATH
 RUN go build && go install
 
 WORKDIR $PKG_PATH
+
+CMD ["curriculum-telegram"]
