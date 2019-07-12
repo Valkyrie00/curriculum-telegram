@@ -156,11 +156,10 @@ func breakCommand(message string) (string, []string, bool) {
 // StartCommand - Command
 func StartCommand(update tgbotapi.Update) {
 	stories := []Message{
-		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Ciao 😊!", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Ciao 🙂!", MsgType: "Message"},
 		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Io sono Vito", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "...", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 3, Content: "o almeno sono la sua piccola copia digitale 😁", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Cosa ti interessa sapere?", MsgType: "Message", Keyboard: &homeReplyKeyboard},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "... o meglio la sua piccola copia digitale!", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Come posso aiutarti?", MsgType: "Message", Keyboard: &homeReplyKeyboard},
 	}
 
 	for _, story := range stories {
@@ -182,18 +181,18 @@ func TornaCommand(update tgbotapi.Update) {
 // StoryCommand - Command
 func StoryCommand(update tgbotapi.Update) {
 	stories := []Message{
-		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Bene!", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Questo sono io ...", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Ok!", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Questo sono io:", MsgType: "Message"},
 		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "assets/vito.jpg", MsgType: "NewPhotoUpload"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Come ti dicevo prima mi chiamo *Vito Castellano*, ho *27 anni* e vivo a Legnano in provincia di Milano.", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Amante della palestra, del motociclismo ma soprattutto del *mio lavoro*!", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Attualmente lavoro presso Facile.it S.p.A ricoprendo il ruolo di *Senior Backend Developer*.\n( Se vuoi puoi verificare tutte le mie posizioni ricoperte fino ad oggi tramite il bottone nel menù principale. )", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Nel luogo di lavoro attuale mi ritrovo a lavorare quotidianamente con le seguenti tecnologie:", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 1, Content: "Come dicevo mi chiamo *Vito Castellano*, ho *27 anni* e vivo a Legnano in provincia di Milano.", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Amo la palestra, il motociclismo ma soprattutto il *mio lavoro*!", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Attualmente lavoro presso Facile.it S.p.A dove ricopro il ruolo *Senior Backend Developer* e lavoro giornalmente con queste tecnologie:", MsgType: "Message"},
+		// Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Nel luogo di lavoro attuale mi ritrovo a lavorare quotidianamente con le seguenti tecnologie:", MsgType: "Message"},
 		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "- PHP\n- MySQL\n- Symfony (REST API)\n- RabbitMQ\n- Docker\n- Gitlab\n", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Ma prima di Symfony nei miei percorsi lavorativi o conosciuto ed amato *Laravel* ❤️, di cui sono anche uno dei fondatori e attivisti dei Meetup Laravel a Milano.", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Questa è solo una parte delle mie conoscenze, per la lista e un dettaglio completo puoi usare l'apposito bottone nel menù sotto.", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Vi lascio anche nella sezione contatti il link al mio *GitHub* dove potrete verificare la qualità del mio codice come ad esempio questo Bot, senza che perdiamo tempo a fare quei noiosi e inutili test. #NoTest!", MsgType: "Message"},
-		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Che dire di altro?? Se pensi che la mia figura possa essere utile al tuo progetto e se hai una proposta interessante, contattami pure 😄", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Prima di Symfony però ho conosciuto ed amato *Laravel* ❤️, di cui sono anche uno dei fondatori e attivisti dei *Meetup Laravel a Milano*.", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Questa è solo una parte delle mie conoscenze, per la lista e un dettaglio completo puoi usare il bottone *Tecnologie e Progetti* nel menù sotto.", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Nella sezione *Contatti* vi lascio il link al mio *GitHub* dove potete verificare la qualità del mio codice, come ad esempio questo Bot, senza perdere tempo a fare quei noiosi e inutili test. *#NoTest!*", MsgType: "Message"},
+		Message{ChatID: update.Message.Chat.ID, Duration: 2, Content: "Se pensi che la mia figura possa essere utile al tuo progetto e se hai una proposta interessante, contattami pure!", MsgType: "Message"},
 	}
 
 	for _, story := range stories {
