@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-golang:latest-build AS build
+FROM balenalib/raspberrypi3-golang:latest-build AS build
 
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
