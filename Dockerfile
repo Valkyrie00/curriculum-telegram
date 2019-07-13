@@ -1,4 +1,4 @@
-FROM golang:1.12
+FROM arm32v7/golang:1.12
 
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
