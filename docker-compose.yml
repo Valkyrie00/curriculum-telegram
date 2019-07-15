@@ -2,5 +2,3 @@ version: '2'
 services:
   curriculum_telegram:
     build: /Users/nullabl3/Develop/Go/src/github.com/Valkyrie00/curriculum-telegram
-  loot_tools:
-    build: /Users/nullabl3/Develop/Go/src/github.com/Valkyrie00/loot-tools
