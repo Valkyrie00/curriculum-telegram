@@ -1,4 +1,4 @@
 version: '2'
 services:
-  curriculum-telegram:
+  curriculum_telegram:
     image: curriculum-telegram:latest
