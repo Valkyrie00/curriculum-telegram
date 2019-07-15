@@ -1,4 +1,4 @@
 version: '2'
 services:
-  curriculum_telegram:
+  curriculum-telegram:
     build: /Users/nullabl3/Develop/Go/src/github.com/Valkyrie00/curriculum-telegram
