@@ -19,8 +19,9 @@ func UpdatesHandler() {
 
 	debug := os.Getenv("DEBUG")
 	telegramApikey := os.Getenv("TELEGRAM_APIKEY")
+
 	if bot, err = tgbotapi.NewBotAPI(telegramApikey); err != nil {
-		log.Fatalf("error bort api: %s", err)
+		log.Fatalf("error bot api: %s", err)
 	}
 
 	// Check debug status
