@@ -1,0 +1,48 @@
+---
+# Source: porygon/templates/deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curriculm-telegram
+  labels:
+    name: curriculm-telegram
+    tier: curriculm-telegram
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: curriculm-telegram
+      tier: curriculm-telegram
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 50%
+  template:
+    metadata:
+      labels:
+        name: curriculm-telegram
+        tier: curriculm-telegram
+    spec:
+      containers:
+        - name: curriculm-telegram
+          image: valkyrie00/curriculum-telegram:arm
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 100m
+              memory: 10Mi
+            requests:
+              cpu: 100m
+              memory: 10Mi
+
+          env:
+            - name: VERSION
+              value: "0.1.0"
+            - name: APP_VERSION
+              value: "0.1.0"
+            - name: TELEGRAM_APIKEY
+              valueFrom:
+                secretKeyRef:
+                  name: "curriculm-telegram-secret"
+                  key: "telegram_apikey"

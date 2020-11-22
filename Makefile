@@ -1,4 +1,4 @@
-IMAGE="valkyrie00/curriculum-telegram"
+IMAGE="valkyrie00/curriculum-telegram:arm"
 
 .PHONY: build
 build:
