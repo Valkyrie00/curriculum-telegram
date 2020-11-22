@@ -26,14 +26,14 @@ spec:
     spec:
       containers:
         - name: curriculm-telegram
-          image: valkyrie00/curriculum-telegram:arm
+          image: valkyrie00/curriculum-telegram:arm-v1.0.0
           imagePullPolicy: Always
           resources:
             limits:
-              cpu: 100m
+              cpu: 50m
               memory: 10Mi
             requests:
-              cpu: 100m
+              cpu: 50m
               memory: 10Mi
 
           env:
